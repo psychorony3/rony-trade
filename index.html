@@ -15,7 +15,6 @@
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .glass-panel { background: rgba(15, 15, 18, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
         .glass-card { background: rgba(21, 21, 26, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .glow-accent { box-shadow: 0 0 35px rgba(182, 255, 74, 0.25); }
         .glow-accent-sm { box-shadow: 0 0 15px rgba(182, 255, 74, 0.15); }
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 5px; height: 5px; }
@@ -145,7 +144,7 @@
                                 <label class="text-[10px] tracking-widest text-zinc-400 font-bold uppercase block mb-1.5">Username / Email</label>
                                 <div class="relative">
                                     <i class="fa-regular fa-user absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
-                                    <input id="email" type="text" class="w-full bg-black/50 border border-white/10 pl-10 pr-4 py-3.5 rounded-xl text-sm outline-none focus:border-[#b6ff4a] transition font-mono" placeholder="rony@gmail.com" value="Rony_201000">
+                                    <input id="email" type="text" autocomplete="off" class="w-full bg-black/50 border border-white/10 pl-10 pr-4 py-3.5 rounded-xl text-sm outline-none focus:border-[#b6ff4a] transition font-mono" placeholder="Enter username or email" value="">
                                 </div>
                             </div>
 
@@ -153,7 +152,7 @@
                                 <label class="text-[10px] tracking-widest text-zinc-400 font-bold uppercase block mb-1.5">Access Pass Key</label>
                                 <div class="relative">
                                     <i class="fa-solid fa-key absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
-                                    <input id="pass" type="password" class="w-full bg-black/50 border border-white/10 pl-10 pr-4 py-3.5 rounded-xl text-sm outline-none focus:border-[#b6ff4a] transition font-mono" placeholder="••••••••" value="rony123">
+                                    <input id="pass" type="password" autocomplete="new-password" class="w-full bg-black/50 border border-white/10 pl-10 pr-4 py-3.5 rounded-xl text-sm outline-none focus:border-[#b6ff4a] transition font-mono" placeholder="Enter password" value="">
                                 </div>
                             </div>
 
@@ -167,7 +166,7 @@
                             </div>
 
                             <div class="grid grid-cols-2 gap-3">
-                                <button onclick="login()" class="bg-white/5 border border-white/10 hover:bg-white/10 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2">
+                                <button onclick="googleAuth()" class="bg-white/5 border border-white/10 hover:bg-white/10 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2">
                                     <i class="fa-brands fa-google text-red-400"></i> Google
                                 </button>
                                 <button onclick="connectWallet()" class="bg-white/5 border border-white/10 hover:bg-[#b6ff4a]/20 hover:border-[#b6ff4a] py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 text-white">
@@ -178,7 +177,7 @@
                     </div>
 
                     <div class="mt-8 pt-6 border-t border-white/5 text-center text-[11px] text-zinc-500 leading-relaxed">
-                        <span class="text-emerald-400 font-bold"><i class="fa-solid fa-[#b6ff4a] fa-circle-check"></i> SSL Secure Terminal</span><br>
+                        <span class="text-emerald-400 font-bold"><i class="fa-solid fa-shield-check"></i> SSL Secure Terminal</span><br>
                         Need help? Contact <a href="https://t.me/Rony_201000" target="_blank" class="text-zinc-300 underline">Telegram Support</a>
                     </div>
                 </div>
@@ -230,9 +229,9 @@
                     </a>
                     
                     <div class="flex items-center gap-2 pl-2 border-l border-white/10">
-                        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=rony" class="w-7 h-7 rounded-full bg-zinc-800 border border-white/10">
+                        <img id="uAvatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=user" class="w-7 h-7 rounded-full bg-zinc-800 border border-white/10">
                         <div class="text-left hidden sm:block">
-                            <div class="text-xs font-bold leading-none" id="uName">Rony_201000</div>
+                            <div class="text-xs font-bold leading-none" id="uName">Trader</div>
                             <span class="text-[9px] text-[#b6ff4a] font-mono">PRO MEMBER</span>
                         </div>
                         <button onclick="logout()" title="Logout" class="ml-2 w-7 h-7 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-400 flex items-center justify-center text-zinc-400 text-xs transition">
@@ -396,25 +395,50 @@
 
         // Web3 Wallet Connect Mock
         function connectWallet() {
+            startTerminalSession('Web3_User');
             showToast('MetaMask / Web3 Wallet Connected!');
-            login();
         }
 
-        // Login Action
+        // Google Auth Mock
+        function googleAuth() {
+            startTerminalSession('Google_User');
+            showToast('Google Account Authenticated!');
+        }
+
+        // Login Action with Validation
         function login() {
-            let v = document.getElementById('email').value || 'Rony_201000';
-            document.getElementById('uName').innerText = v;
+            const emailInput = document.getElementById('email').value.trim();
+            const passInput = document.getElementById('pass').value.trim();
+
+            if (!emailInput) {
+                showToast('Please enter your username or email', 'fa-triangle-exclamation', true);
+                return;
+            }
+
+            if (!passInput) {
+                showToast('Please enter your password', 'fa-triangle-exclamation', true);
+                return;
+            }
+
+            startTerminalSession(emailInput);
+            showToast('Welcome to RONY TRADE Pro Terminal');
+        }
+
+        function startTerminalSession(username) {
+            document.getElementById('uName').innerText = username;
+            document.getElementById('uAvatar').src = `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(username)}`;
             document.getElementById('loginPage').classList.add('hidden');
             document.getElementById('tradePage').classList.remove('hidden');
             document.getElementById('tradePage').classList.add('flex');
 
             initTV(currentPairSymbol);
             startPriceTicker();
-            showToast('Welcome to RONY TRADE Pro Terminal');
         }
 
         // Logout Action
         function logout() {
+            document.getElementById('email').value = '';
+            document.getElementById('pass').value = '';
             document.getElementById('tradePage').classList.add('hidden');
             document.getElementById('tradePage').classList.remove('flex');
             document.getElementById('loginPage').classList.remove('hidden');
@@ -534,3 +558,5 @@
     </script>
 </body>
 </html>
+
+    
