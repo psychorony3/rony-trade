@@ -52,12 +52,9 @@
         }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         
-        /* Gold Cyber Glow Utilities */
         .gold-glow { box-shadow: 0 0 25px rgba(255, 215, 0, 0.25); }
         .gold-glow-lg { box-shadow: 0 0 50px rgba(255, 215, 0, 0.35); }
-        .gold-border-glow { border-color: rgba(255, 215, 0, 0.4); box-shadow: 0 0 15px rgba(255, 215, 0, 0.15); }
         
-        /* Glassmorphism Backgrounds */
         .glass-panel {
             background: rgba(15, 15, 21, 0.75);
             backdrop-filter: blur(20px);
@@ -69,13 +66,11 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 5px; height: 5px; }
         ::-webkit-scrollbar-track { background: #030305; }
         ::-webkit-scrollbar-thumb { background: #222230; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
         
-        /* Custom Range Input */
         input[type=range] { -webkit-appearance: none; background: #161620; height: 6px; border-radius: 3px; }
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
@@ -84,7 +79,6 @@
             box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
         }
         
-        /* Grid Lines Background Animation */
         .cyber-grid {
             background-size: 40px 40px;
             background-image: 
@@ -111,23 +105,20 @@
 
         <!-- LANDING & AUTHENTICATION VIEW -->
         <div id="loginPage" class="flex-1 flex items-center justify-center p-4 lg:p-10 relative overflow-hidden">
-            
-            <!-- Ambient Glowing Spheres -->
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
             <div class="w-full max-w-[1240px] grid grid-cols-1 lg:grid-cols-12 glass-panel rounded-[36px] overflow-hidden shadow-2xl relative border border-gold-400/20">
                 
-                <!-- LEFT HERO / KOL PORTFOLIO (7 Cols) -->
+                <!-- LEFT HERO / KOL PORTFOLIO -->
                 <div class="lg:col-span-7 p-8 lg:p-12 flex flex-col justify-between relative z-10 border-b lg:border-b-0 lg:border-r border-white/10">
                     <div>
-                        <!-- Header / Brand Logo -->
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-3.5">
                                 <div class="w-12 h-12 bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 rounded-2xl flex items-center justify-center text-black font-black text-2xl shadow-[0_0_25px_rgba(255,215,0,0.4)] border border-white/40">R</div>
                                 <div>
                                     <span class="font-black text-2xl tracking-tight block leading-none text-white">RONY<span class="text-gold-400">.TRADE</span></span>
-                                    <span class="text-[10px] text-zinc-400 font-mono tracking-widest uppercase">Cyberpunk Trading & KOL Terminal</span>
+                                    <span class="text-[10px] text-zinc-400 font-mono tracking-widest uppercase">Cyberpunk Trading Terminal</span>
                                 </div>
                             </div>
                             <span class="bg-gold-400/10 text-gold-400 border border-gold-400/30 px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
@@ -135,17 +126,15 @@
                             </span>
                         </div>
 
-                        <!-- Hero Main Heading -->
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.02] mt-10 tracking-tight">
                             Algorithmic <br>
                             <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500">Precision Trading.</span><br>
-                            Next-Gen Web3 Intelligence.
+                            22+ Crypto Markets.
                         </h1>
                         <p class="text-zinc-400 text-sm mt-6 leading-relaxed max-w-lg">
                             Institutional-grade crypto analytics, high-probability trade setups, and prediction market strategies by <strong class="text-gold-400">Rony Ahammed</strong>.
                         </p>
 
-                        <!-- KOL Metrics Badges -->
                         <div class="grid grid-cols-3 gap-4 mt-8">
                             <div class="glass-card p-4 rounded-2xl border border-gold-400/10 hover:border-gold-400/30 transition">
                                 <div class="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Community</div>
@@ -156,12 +145,11 @@
                                 <div class="font-black text-2xl text-white mt-1 font-mono">71%</div>
                             </div>
                             <div class="glass-card p-4 rounded-2xl border border-gold-400/10 hover:border-gold-400/30 transition">
-                                <div class="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Partners</div>
-                                <div class="font-black text-2xl text-white mt-1 font-mono">12+ VIP</div>
+                                <div class="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Coins Supported</div>
+                                <div class="font-black text-2xl text-white mt-1 font-mono">22+ LIVE</div>
                             </div>
                         </div>
 
-                        <!-- VIP Affiliate Promo Box -->
                         <div class="mt-6 glass-card p-4 rounded-2xl border border-gold-400/30 bg-gradient-to-r from-gold-500/10 via-transparent to-purple-500/10">
                             <div class="flex items-center justify-between gap-3">
                                 <div class="flex items-center gap-3">
@@ -180,7 +168,6 @@
                         </div>
                     </div>
 
-                    <!-- Social Handles Footer -->
                     <div class="mt-8 flex flex-wrap gap-3 text-xs">
                         <a href="https://x.com/Rony_201000" target="_blank" class="flex items-center gap-2.5 bg-black/50 border border-white/10 hover:border-gold-400/60 px-4 py-2.5 rounded-xl transition">
                             <i class="fa-brands fa-x-twitter text-gold-400"></i> <span class="font-bold">@Rony_201000</span>
@@ -188,13 +175,10 @@
                         <a href="https://t.me/Rony_201000" target="_blank" class="flex items-center gap-2.5 bg-black/50 border border-white/10 hover:border-[#229ED9] px-4 py-2.5 rounded-xl transition">
                             <i class="fa-brands fa-telegram text-[#229ED9]"></i> <span class="font-bold">@Rony_201000</span>
                         </a>
-                        <div class="flex items-center gap-2.5 bg-black/50 border border-white/10 px-4 py-2.5 rounded-xl text-zinc-400">
-                            <i class="fa-brands fa-discord text-[#5865F2]"></i> <span class="font-mono text-xs">rony_201000</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- RIGHT AUTHENTICATION CARD (5 Cols) -->
+                <!-- RIGHT AUTHENTICATION CARD -->
                 <div class="lg:col-span-5 p-8 lg:p-12 bg-obsidian-800/90 flex flex-col justify-between relative z-10">
                     <div>
                         <div class="flex justify-between items-start">
@@ -207,7 +191,6 @@
                             </div>
                         </div>
 
-                        <!-- STEP 1: Enter Gmail -->
                         <div id="stepEmail" class="mt-8 space-y-4">
                             <div>
                                 <label class="text-[10px] tracking-widest text-zinc-400 font-bold uppercase block mb-1.5">Registered Gmail</label>
@@ -236,7 +219,6 @@
                             </div>
                         </div>
 
-                        <!-- STEP 2: Enter Verification OTP -->
                         <div id="stepOTP" class="mt-8 space-y-4 hidden">
                             <div class="bg-gold-400/10 border border-gold-400/30 p-3.5 rounded-xl text-center">
                                 <p class="text-xs text-gold-400">Verification code sent to:<br><strong id="sentEmailText" class="text-white font-mono"></strong></p>
@@ -266,27 +248,43 @@
             </div>
         </div>
 
-        <!-- MAIN TRADING TERMINAL VIEW (Hidden by default) -->
+        <!-- MAIN TRADING TERMINAL VIEW -->
         <div id="tradePage" class="hidden flex-1 flex flex-col bg-obsidian-900">
             
             <!-- Terminal Header Navigation -->
             <header class="bg-obsidian-800 border-b border-white/10 px-4 py-2.5 flex items-center justify-between sticky top-0 z-40">
-                <div class="flex items-center gap-6">
+                <div class="flex items-center gap-4">
                     <div class="flex items-center gap-2.5">
                         <div class="w-8 h-8 bg-gold-400 rounded-xl flex items-center justify-center text-black font-black text-lg shadow-[0_0_15px_rgba(255,215,0,0.5)]">R</div>
-                        <span class="font-black tracking-tight text-base text-white">RONY<span class="text-gold-400">.TRADE</span></span>
+                        <span class="font-black tracking-tight text-base text-white hidden sm:inline">RONY<span class="text-gold-400">.TRADE</span></span>
                     </div>
 
-                    <!-- Ticker Switcher Buttons -->
-                    <div class="hidden md:flex items-center gap-1 bg-black/60 p-1 rounded-xl border border-white/10 text-xs font-mono">
-                        <button onclick="switchPair('BINANCE:BTCUSDT', 'BTC/USDT', 64382.12)" id="tab-BTC" class="px-3.5 py-1.5 rounded-lg font-bold bg-gold-400 text-black transition">BTC/USDT</button>
-                        <button onclick="switchPair('BINANCE:ETHUSDT', 'ETH/USDT', 3482.50)" id="tab-ETH" class="px-3.5 py-1.5 rounded-lg font-bold text-zinc-400 hover:text-white transition">ETH/USDT</button>
-                        <button onclick="switchPair('BINANCE:SOLUSDT', 'SOL/USDT', 148.90)" id="tab-SOL" class="px-3.5 py-1.5 rounded-lg font-bold text-zinc-400 hover:text-white transition">SOL/USDT</button>
+                    <!-- SEARCHABLE COIN SELECTOR DROPDOWN (22+ COINS) -->
+                    <div class="relative">
+                        <button onclick="toggleCoinMenu()" class="flex items-center gap-2 bg-black/70 border border-gold-400/40 hover:border-gold-400 px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold text-gold-400 transition">
+                            <i class="fa-solid fa-coins"></i>
+                            <span id="selectedCoinLabel">BTC/USDT</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-zinc-400"></i>
+                        </button>
+
+                        <div id="coinMenu" class="hidden absolute top-11 left-0 w-64 glass-panel bg-obsidian-800/95 border border-gold-400/30 rounded-2xl shadow-2xl p-2 z-50">
+                            <div class="p-1 mb-1">
+                                <input id="coinSearchInput" oninput="filterCoins()" type="text" placeholder="Search 22+ coins..." class="w-full bg-black/60 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-white font-mono outline-none focus:border-gold-400">
+                            </div>
+                            <div id="coinListContainer" class="max-h-60 overflow-y-auto space-y-1">
+                                <!-- Dynamically Rendered -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Coin Quick Chips -->
+                    <div class="hidden lg:flex items-center gap-1.5 font-mono text-xs" id="quickCoinChips">
+                        <!-- Top 4 Quick Chips Rendered via JS -->
                     </div>
                 </div>
 
                 <!-- Ticker Price Banner -->
-                <div class="hidden lg:flex items-center gap-8 text-xs font-mono">
+                <div class="hidden xl:flex items-center gap-8 text-xs font-mono">
                     <div>
                         <span class="text-zinc-500 block text-[9px]">PAIR</span>
                         <span id="currentPairText" class="font-bold text-white">BTC/USDT</span>
@@ -297,14 +295,14 @@
                     </div>
                     <div>
                         <span class="text-zinc-500 block text-[9px]">24H CHANGE</span>
-                        <span class="text-emerald-400 font-bold">+2.34%</span>
+                        <span id="pChange" class="text-emerald-400 font-bold">+2.34%</span>
                     </div>
                 </div>
 
                 <!-- User Profile Bar -->
                 <div class="flex items-center gap-3">
                     <a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="hidden sm:flex items-center gap-1.5 bg-gold-400/10 border border-gold-400/30 px-3 py-1.5 rounded-xl text-xs text-gold-400 font-bold hover:bg-gold-400 hover:text-black transition">
-                        <i class="fa-solid fa-gem"></i> Polymarket VIP
+                        <i class="fa-solid fa-gem"></i> VIP Signals
                     </a>
                     
                     <div class="flex items-center gap-2 pl-3 border-l border-white/10">
@@ -323,14 +321,12 @@
             <!-- Main Workspace Grid -->
             <div class="flex-1 grid grid-cols-12 gap-2 p-2">
                 
-                <!-- Left Section: TradingView Chart + Active Positions (8 Cols) -->
+                <!-- Left Section: TradingView Chart + Active Positions -->
                 <div class="col-span-12 lg:col-span-8 flex flex-col gap-2">
-                    <!-- Chart Embed -->
                     <div class="bg-obsidian-800 rounded-2xl border border-white/10 overflow-hidden flex-1 min-h-[450px] relative">
                         <div id="tv" class="w-full h-full min-h-[450px]"></div>
                     </div>
 
-                    <!-- Positions Table -->
                     <div class="bg-obsidian-800 rounded-2xl border border-white/10 p-4 h-[220px] flex flex-col">
                         <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
                             <div class="flex gap-4 text-xs font-bold">
@@ -354,11 +350,11 @@
                                 </thead>
                                 <tbody>
                                     <tr class="border-b border-white/5">
-                                        <td class="py-2.5 font-bold text-white">BTC/USDT</td>
+                                        <td class="py-2.5 font-bold text-white" id="posSymbol">BTC/USDT</td>
                                         <td class="py-2.5 text-emerald-400 font-bold">LONG 20x</td>
-                                        <td class="py-2.5 text-zinc-300">$64,120.00</td>
+                                        <td class="py-2.5 text-zinc-300" id="posEntry">$64,120.00</td>
                                         <td class="py-2.5 text-zinc-300" id="markPriceTd">$64,382.12</td>
-                                        <td class="py-2.5 text-emerald-400 font-bold">+$163.26 (+8.15%)</td>
+                                        <td class="py-2.5 text-emerald-400 font-bold" id="posPnL">+$163.26 (+8.15%)</td>
                                         <td class="py-2.5 text-right">
                                             <button onclick="this.closest('tr').remove(); document.getElementById('posCount').innerText='0'; showToast('Position Closed');" class="bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white border border-red-500/20 px-2.5 py-1 rounded text-[10px] transition">Close</button>
                                         </td>
@@ -369,23 +365,19 @@
                     </div>
                 </div>
 
-                <!-- Right Section: Order Execution + Order Book (4 Cols) -->
+                <!-- Right Section: Order Execution + Order Book -->
                 <div class="col-span-12 lg:col-span-4 flex flex-col gap-2">
-                    
-                    <!-- Execution Controls -->
                     <div class="bg-obsidian-800 rounded-2xl border border-white/10 p-4">
                         <div class="flex justify-between items-center mb-3">
                             <span class="font-bold text-sm text-white">Order Execution</span>
                             <span class="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded font-mono text-zinc-400">Balance: $10,240.50</span>
                         </div>
 
-                        <!-- Side Switcher -->
                         <div class="grid grid-cols-2 gap-2 mb-4">
                             <button id="btnLong" onclick="setSide('LONG')" class="bg-emerald-500 text-black py-2.5 rounded-xl font-black text-xs transition">LONG / BUY</button>
                             <button id="btnShort" onclick="setSide('SHORT')" class="bg-white/5 border border-white/10 text-zinc-400 py-2.5 rounded-xl font-black text-xs hover:bg-red-500/20 hover:text-red-400 transition">SHORT / SELL</button>
                         </div>
 
-                        <!-- Leverage -->
                         <div class="mb-4">
                             <div class="flex justify-between text-xs mb-1 font-mono">
                                 <span class="text-zinc-400">Leverage</span>
@@ -394,19 +386,16 @@
                             <input type="range" min="1" max="100" value="20" class="w-full" oninput="document.getElementById('levValue').innerText = this.value + 'x'">
                         </div>
 
-                        <!-- Price Input -->
                         <div class="mb-3">
                             <label class="text-[10px] text-zinc-500 font-bold uppercase block mb-1">Price (USDT)</label>
                             <input id="priceIn" class="w-full bg-black/60 border border-white/10 p-3 rounded-xl font-mono text-xs text-white outline-none focus:border-gold-400" value="64382.12">
                         </div>
 
-                        <!-- Submit Button -->
                         <button onclick="showToast('Trade Executed Successfully!', 'fa-bolt')" id="tradeSubmitBtn" class="w-full bg-gold-400 hover:bg-gold-300 text-black py-3.5 rounded-xl font-black text-xs tracking-wider uppercase transition gold-glow">
                             EXECUTE LONG POSITION
                         </button>
                     </div>
 
-                    <!-- Animated Order Book -->
                     <div class="bg-obsidian-800 rounded-2xl border border-white/10 p-4 flex-1 flex flex-col justify-between min-h-[220px]">
                         <div class="flex justify-between items-center text-xs border-b border-white/10 pb-2 mb-2 font-bold text-white">
                             <span>Order Book</span>
@@ -426,19 +415,99 @@
     <!-- TradingView Script -->
     <script src="https://s3.tradingview.com/tv.js"></script>
     <script>
-        // CONFIGURATION: Set your EmailJS Keys here
-        const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-        const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-        const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+        // 22+ POPULAR COINS DATABASE
+        const cryptoCoins = [
+            { symbol: 'BINANCE:BTCUSDT', name: 'BTC/USDT', label: 'Bitcoin', price: 64382.12, change: '+2.34%' },
+            { symbol: 'BINANCE:ETHUSDT', name: 'ETH/USDT', label: 'Ethereum', price: 3482.50, change: '+1.85%' },
+            { symbol: 'BINANCE:SOLUSDT', name: 'SOL/USDT', label: 'Solana', price: 148.90, change: '+5.12%' },
+            { symbol: 'BINANCE:BNBUSDT', name: 'BNB/USDT', label: 'BNB', price: 582.30, change: '+0.95%' },
+            { symbol: 'BINANCE:XRPUSDT', name: 'XRP/USDT', label: 'Ripple', price: 0.584, change: '+3.40%' },
+            { symbol: 'BINANCE:ADAUSDT', name: 'ADA/USDT', label: 'Cardano', price: 0.382, change: '-0.45%' },
+            { symbol: 'BINANCE:DOGEUSDT', name: 'DOGE/USDT', label: 'Dogecoin', price: 0.124, change: '+8.10%' },
+            { symbol: 'BINANCE:AVAXUSDT', name: 'AVAX/USDT', label: 'Avalanche', price: 26.50, change: '+2.10%' },
+            { symbol: 'BINANCE:DOTUSDT', name: 'DOT/USDT', label: 'Polkadot', price: 4.85, change: '-1.20%' },
+            { symbol: 'BINANCE:LINKUSDT', name: 'LINK/USDT', label: 'Chainlink', price: 11.80, change: '+4.25%' },
+            { symbol: 'BINANCE:POLUSDT', name: 'POL/USDT', label: 'Polygon (POL)', price: 0.412, change: '+1.15%' },
+            { symbol: 'BINANCE:SHIBUSDT', name: 'SHIB/USDT', label: 'Shiba Inu', price: 0.0000178, change: '+6.40%' },
+            { symbol: 'BINANCE:LTCUSDT', name: 'LTC/USDT', label: 'Litecoin', price: 66.40, change: '+0.80%' },
+            { symbol: 'BINANCE:NEARUSDT', name: 'NEAR/USDT', label: 'Near Protocol', price: 4.92, change: '+7.30%' },
+            { symbol: 'BINANCE:SUIUSDT', name: 'SUI/USDT', label: 'Sui Network', price: 1.84, change: '+12.40%' },
+            { symbol: 'BINANCE:APTUSDT', name: 'APT/USDT', label: 'Aptos', price: 8.20, change: '+3.15%' },
+            { symbol: 'BINANCE:PEPEUSDT', name: 'PEPE/USDT', label: 'Pepe Coin', price: 0.0000098, change: '+9.80%' },
+            { symbol: 'BINANCE:ATOMUSDT', name: 'ATOM/USDT', label: 'Cosmos', price: 4.65, change: '-0.85%' },
+            { symbol: 'BINANCE:UNIUSDT', name: 'UNI/USDT', label: 'Uniswap', price: 7.15, change: '+2.60%' },
+            { symbol: 'BINANCE:ARBUSDT', name: 'ARB/USDT', label: 'Arbitrum', price: 0.582, change: '+1.90%' },
+            { symbol: 'BINANCE:OPUSDT', name: 'OP/USDT', label: 'Optimism', price: 1.62, change: '+3.80%' },
+            { symbol: 'BINANCE:TONUSDT', name: 'TON/USDT', label: 'Toncoin', price: 5.65, change: '+0.40%' }
+        ];
 
-        if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
-            emailjs.init(EMAILJS_PUBLIC_KEY);
-        }
-
+        let selectedCoin = cryptoCoins[0];
+        let currentPrice = selectedCoin.price;
         let generatedOTP = null;
         let userEmailAddress = "";
-        let currentPairSymbol = "BINANCE:BTCUSDT";
-        let currentPrice = 64382.12;
+
+        function renderCoinSelector() {
+            const container = document.getElementById('coinListContainer');
+            const chips = document.getElementById('quickCoinChips');
+            
+            container.innerHTML = '';
+            cryptoCoins.forEach(coin => {
+                const item = document.createElement('div');
+                item.className = "flex items-center justify-between p-2 rounded-xl hover:bg-gold-400/10 cursor-pointer transition text-xs font-mono";
+                item.onclick = () => selectCoin(coin);
+                item.innerHTML = `
+                    <div>
+                        <div class="font-bold text-white">${coin.name}</div>
+                        <div class="text-[10px] text-zinc-400">${coin.label}</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-gold-400 font-bold">$${coin.price}</div>
+                        <div class="text-[10px] ${coin.change.includes('+') ? 'text-emerald-400':'text-red-400'}">${coin.change}</div>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+
+            chips.innerHTML = '';
+            cryptoCoins.slice(0, 4).forEach(coin => {
+                const btn = document.createElement('button');
+                btn.className = `px-3 py-1 rounded-xl text-xs font-bold font-mono transition ${selectedCoin.symbol === coin.symbol ? 'bg-gold-400 text-black' : 'bg-black/60 text-zinc-400 hover:text-white'}`;
+                btn.innerText = coin.name;
+                btn.onclick = () => selectCoin(coin);
+                chips.appendChild(btn);
+            });
+        }
+
+        function toggleCoinMenu() {
+            document.getElementById('coinMenu').classList.toggle('hidden');
+        }
+
+        function filterCoins() {
+            const query = document.getElementById('coinSearchInput').value.toLowerCase();
+            const items = document.getElementById('coinListContainer').children;
+            cryptoCoins.forEach((coin, idx) => {
+                if (coin.name.toLowerCase().includes(query) || coin.label.toLowerCase().includes(query)) {
+                    items[idx].style.display = 'flex';
+                } else {
+                    items[idx].style.display = 'none';
+                }
+            });
+        }
+
+        function selectCoin(coin) {
+            selectedCoin = coin;
+            currentPrice = coin.price;
+            document.getElementById('selectedCoinLabel').innerText = coin.name;
+            document.getElementById('currentPairText').innerText = coin.name;
+            document.getElementById('pLive').innerText = '$' + coin.price;
+            document.getElementById('pChange').innerText = coin.change;
+            document.getElementById('posSymbol').innerText = coin.name;
+            document.getElementById('coinMenu').classList.add('hidden');
+            
+            renderCoinSelector();
+            initTV(coin.symbol);
+            showToast(`Switched to ${coin.name}`, 'fa-coins');
+        }
 
         function showToast(msg, icon='fa-circle-check', isError=false) {
             const c = document.getElementById('toastContainer');
@@ -457,32 +526,12 @@
             }
 
             generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
-            const btn = document.getElementById('sendBtn');
-            btn.innerText = "SENDING CODE...";
-            btn.disabled = true;
-
-            if (EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
-                setTimeout(() => {
-                    showToast('Demo OTP Code: ' + generatedOTP, 'fa-key');
-                    document.getElementById('sentEmailText').innerText = userEmailAddress;
-                    document.getElementById('stepEmail').classList.add('hidden');
-                    document.getElementById('stepOTP').classList.remove('hidden');
-                }, 800);
-            } else {
-                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                    to_email: userEmailAddress,
-                    otp_code: generatedOTP
-                }).then(() => {
-                    showToast('Verification code sent to email!');
-                    document.getElementById('sentEmailText').innerText = userEmailAddress;
-                    document.getElementById('stepEmail').classList.add('hidden');
-                    document.getElementById('stepOTP').classList.remove('hidden');
-                }).catch(() => {
-                    showToast('Email send failed. Check keys.', 'fa-triangle-exclamation', true);
-                    btn.innerText = "REQUEST ACCESS CODE";
-                    btn.disabled = false;
-                });
-            }
+            setTimeout(() => {
+                showToast('Demo OTP Code: ' + generatedOTP, 'fa-key');
+                document.getElementById('sentEmailText').innerText = userEmailAddress;
+                document.getElementById('stepEmail').classList.add('hidden');
+                document.getElementById('stepOTP').classList.remove('hidden');
+            }, 800);
         }
 
         function verifyOTP() {
@@ -502,8 +551,6 @@
         function resetAuth() {
             document.getElementById('stepOTP').classList.add('hidden');
             document.getElementById('stepEmail').classList.remove('hidden');
-            document.getElementById('sendBtn').innerText = "REQUEST ACCESS CODE";
-            document.getElementById('sendBtn').disabled = false;
         }
 
         function launchTerminal(username) {
@@ -513,7 +560,8 @@
             document.getElementById('tradePage').classList.remove('hidden');
             document.getElementById('tradePage').classList.add('flex');
 
-            initTV(currentPairSymbol);
+            renderCoinSelector();
+            initTV(selectedCoin.symbol);
             startTicker();
         }
 
@@ -539,13 +587,6 @@
             });
         }
 
-        function switchPair(symbol, label, price) {
-            currentPairSymbol = symbol;
-            currentPrice = price;
-            document.getElementById('currentPairText').innerText = label;
-            initTV(symbol);
-        }
-
         function setSide(side) {
             const bLong = document.getElementById('btnLong');
             const bShort = document.getElementById('btnShort');
@@ -567,7 +608,7 @@
         function startTicker() {
             setInterval(() => {
                 let delta = (Math.random() - 0.49) * (currentPrice * 0.001);
-                currentPrice = parseFloat((currentPrice + delta).toFixed(2));
+                currentPrice = parseFloat((currentPrice + delta).toFixed(currentPrice < 1 ? 4 : 2));
 
                 if (document.getElementById('pLive')) document.getElementById('pLive').innerText = '$' + currentPrice.toLocaleString();
                 if (document.getElementById('priceIn')) document.getElementById('priceIn').value = currentPrice;
@@ -584,12 +625,12 @@
             if (!asks || !bids) return;
 
             asks.innerHTML = `
-                <div class="flex justify-between text-red-400"><span>${(currentPrice + 1.2).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*1.2).toFixed(3)} BTC</span></div>
-                <div class="flex justify-between text-red-400"><span>${(currentPrice + 0.5).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*0.8).toFixed(3)} BTC</span></div>
+                <div class="flex justify-between text-red-400"><span>${(currentPrice + (currentPrice * 0.001)).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*1.2).toFixed(3)}</span></div>
+                <div class="flex justify-between text-red-400"><span>${(currentPrice + (currentPrice * 0.0005)).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*0.8).toFixed(3)}</span></div>
             `;
             bids.innerHTML = `
-                <div class="flex justify-between text-emerald-400"><span>${(currentPrice - 0.5).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*0.9).toFixed(3)} BTC</span></div>
-                <div class="flex justify-between text-emerald-400"><span>${(currentPrice - 1.2).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*1.5).toFixed(3)} BTC</span></div>
+                <div class="flex justify-between text-emerald-400"><span>${(currentPrice - (currentPrice * 0.0005)).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*0.9).toFixed(3)}</span></div>
+                <div class="flex justify-between text-emerald-400"><span>${(currentPrice - (currentPrice * 0.001)).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*1.5).toFixed(3)}</span></div>
             `;
         }
     </script>
