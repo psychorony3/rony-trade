@@ -1,118 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RONY TRADE | Official KOL Portfolio</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<style>body{background:#050507;font-family:Inter,sans-serif}.mono{font-family:JetBrains Mono,monospace}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RONY TRADE | Official Web3 Terminal & KOL Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050507; font-family: 'Inter', sans-serif; color: #ffffff; overflow-x: hidden; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .glass-panel { background: rgba(15, 15, 18, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(21, 21, 26, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glow-accent { box-shadow: 0 0 35px rgba(182, 255, 74, 0.25); }
+        .glow-accent-sm { box-shadow: 0 0 15px rgba(182, 255, 74, 0.15); }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: #08080a; }
+        ::-webkit-scrollbar-thumb { background: #222228; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b6ff4a; }
+        /* Range Slider Styling */
+        input[type=range] { -webkit-appearance: none; background: #1a1a22; height: 6px; border-radius: 3px; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #b6ff4a; cursor: pointer; box-shadow: 0 0 10px rgba(182, 255, 74, 0.5); }
+    </style>
 </head>
-<body class="text-white">
+<body class="min-h-screen flex flex-col justify-between">
 
-<!-- TOP ANNOUNCEMENT -->
-<div class="bg-[#b6ff4a] text-black text-center py-2 text-xs font-black tracking-wider">
-🚀 OFFICIAL PARTNER: <a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="underline">POLYMARKET.COM/?via=rony-j6jh</a> - USE MY LINK FOR VIP ACCESS + BONUS 🚀
-</div>
+    <!-- TOP ANNOUNCEMENT BANNER -->
+    <div class="bg-[#b6ff4a] text-black text-center py-2 px-4 text-xs font-black tracking-wider flex items-center justify-center gap-2 relative z-50">
+        <span class="bg-black text-[#b6ff4a] text-[10px] px-2 py-0.5 rounded-full uppercase tracking-widest font-black">Official Partner</span>
+        <span>POLYMARKET VIP ACCESS & SIGNALS IS ACTIVE</span>
+        <a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="underline hover:opacity-80 transition ml-2 font-bold flex items-center gap-1">
+            CLAIM BONUS <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
+    </div>
 
-<!-- LOGIN PAGE -->
-<div id="loginPage" class="min-h-screen flex items-center justify-center p-4 bg-[radial-gradient(circle_at_50%_0%,rgba(182,255,74,0.15),transparent_60%)]">
-<div class="w-full max-w-[1100px] grid grid-cols-1 lg:grid-cols-2 bg-[#0f0f0f] rounded-[32px] border border-[#1f1f1f] overflow-hidden shadow-2xl">
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toastContainer" class="fixed top-12 right-5 z-[100] flex flex-col gap-2 pointer-events-none"></div>
 
-<!-- LEFT -->
-<div class="p-10 lg:p-12 flex flex-col justify-between relative">
-<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#b6ff4a]/10 via-transparent to-transparent pointer-events-none"></div>
-<div class="relative">
-<div class="flex items-center gap-3"><div class="w-9 h-9 bg-[#b6ff4a] rounded-full flex items-center justify-center text-black font-black">R</div><span class="font-black text-xl">RONY.TRADE</span><span class="text-[9px] bg-white text-black px-2 py-1 rounded-full font-bold">VERIFIED KOL</span></div>
-<h1 class="text-[48px] font-black leading-[0.85] mt-12 tracking-tight">Trade Like<br><span class="text-[#b6ff4a]">A Pro.</span><br>Earn Like<br>A KOL.</h1>
-<p class="text-zinc-400 text-sm mt-5 leading-relaxed">Crypto Influencer • 6.4k Followers • 5.6k+ Posts<br>DeFi, Polymarket & Prediction Market Specialist.</p>
+    <!-- MAIN CONTAINER -->
+    <div class="flex-1 flex flex-col">
 
-<div class="grid grid-cols-3 gap-3 mt-8">
-<div class="bg-[#151515] border border-[#222] p-3 rounded-2xl"><div class="text-[10px] text-zinc-500">FOLLOWERS</div><div class="font-black text-[#b6ff4a]">6.4K+</div></div>
-<div class="bg-[#151515] border border-[#222] p-3 rounded-2xl"><div class="text-[10px] text-zinc-500">WIN RATE</div><div class="font-black">71%</div></div>
-<div class="bg-[#151515] border border-[#222] p-3 rounded-2xl"><div class="text-[10px] text-zinc-500">CLIENTS</div><div class="font-black">12+</div></div>
-</div>
+        <!-- LOGIN / LANDING VIEW -->
+        <div id="loginPage" class="flex-1 flex items-center justify-center p-4 lg:p-8 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#b6ff4a]/10 via-[#050507] to-[#050507]">
+            <div class="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-12 glass-panel rounded-[32px] overflow-hidden shadow-2xl relative border border-white/10">
+                
+                <!-- LEFT HERO PORTFOLIO (7 Cols) -->
+                <div class="lg:col-span-7 p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10">
+                    <div class="absolute -top-24 -left-24 w-72 h-72 bg-[#b6ff4a]/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Brand Header -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-[#b6ff4a] rounded-2xl flex items-center justify-center text-black font-black text-xl shadow-[0_0_20px_rgba(182,255,74,0.4)]">R</div>
+                                <div>
+                                    <span class="font-black text-xl tracking-tight block leading-none">RONY<span class="text-[#b6ff4a]">.TRADE</span></span>
+                                    <span class="text-[9px] text-zinc-400 font-mono tracking-widest uppercase">Web3 KOL Terminal</span>
+                                </div>
+                            </div>
+                            <span class="bg-[#b6ff4a]/10 text-[#b6ff4a] border border-[#b6ff4a]/30 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-[#b6ff4a] animate-pulse"></span> VERIFIED KOL
+                            </span>
+                        </div>
 
-<div class="mt-8 space-y-2">
-<a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="flex items-center justify-between bg-[#1a1a1a] border border-[#2a2a2a] p-3 rounded-xl hover:border-[#b6ff4a] transition"><span class="text-xs"><i class="fa-solid fa-chart-line text-[#b6ff4a] mr-2"></i> My Polymarket Affiliate Link</span><span class="text-[10px] bg-[#b6ff4a] text-black px-2 py-1 rounded-full font-bold">LIVE</span></a>
-</div>
-</div>
+                        <!-- Main Heading -->
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.95] mt-10 tracking-tight">
+                            Trade With <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#b6ff4a] to-emerald-400">Precision.</span><br>
+                            Earn Like A Pro.
+                        </h1>
+                        <p class="text-zinc-400 text-sm mt-5 leading-relaxed max-w-md">
+                            Crypto Influencer, Prediction Market Specialist & DeFi Strategist. Access real-time institutional analytics & exclusive VIP trade signals.
+                        </p>
 
-<div class="relative mt-10 flex gap-3 text-[11px]">
-<a href="https://x.com/Rony_201000" target="_blank" class="flex items-center gap-2 bg-black border border-[#222] px-4 py-2 rounded-full hover:bg-white hover:text-black transition"><i class="fa-brands fa-x-twitter"></i> @Rony_201000</a>
-<a href="https://t.me/Rony_201000" target="_blank" class="flex items-center gap-2 bg-black border border-[#222] px-4 py-2 rounded-full hover:bg-[#229ED9] hover:text-white transition"><i class="fa-brands fa-telegram"></i> @Rony_201000</a>
-<a href="#" class="flex items-center gap-2 bg-black border border-[#222] px-4 py-2 rounded-full"><i class="fa-brands fa-discord"></i> rony_201000</a>
-</div>
-</div>
+                        <!-- Key Stats Grid -->
+                        <div class="grid grid-cols-3 gap-3 mt-8">
+                            <div class="glass-card p-4 rounded-2xl border border-white/5">
+                                <div class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Followers</div>
+                                <div class="font-black text-xl text-[#b6ff4a] mt-1 font-mono">6.4K+</div>
+                            </div>
+                            <div class="glass-card p-4 rounded-2xl border border-white/5">
+                                <div class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Win Rate</div>
+                                <div class="font-black text-xl text-white mt-1 font-mono">71%</div>
+                            </div>
+                            <div class="glass-card p-4 rounded-2xl border border-white/5">
+                                <div class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Clients / Brands</div>
+                                <div class="font-black text-xl text-white mt-1 font-mono">12+</div>
+                            </div>
+                        </div>
 
-<!-- RIGHT LOGIN -->
-<div class="p-10 lg:p-12 bg-[#0a0a0a] border-l border-[#1f1f1f]">
-<div class="flex justify-between items-start">
-<div><h2 class="text-[28px] font-black">Login</h2><p class="text-zinc-500 text-xs mt-1">Access RONY TRADE Pro Terminal</p></div>
-<div class="w-10 h-10 bg-[#1a1a1a] rounded-full flex items-center justify-center"><i class="fa-solid fa-lock text-zinc-500 text-xs"></i></div>
-</div>
+                        <!-- Affiliate Promo Card -->
+                        <div class="mt-6 glass-card p-4 rounded-2xl border border-[#b6ff4a]/20 bg-gradient-to-r from-[#b6ff4a]/5 to-transparent">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-xl bg-[#b6ff4a]/20 flex items-center justify-center text-[#b6ff4a]">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-white">Polymarket VIP Partnership</div>
+                                        <div class="text-[10px] text-zinc-400">Get 0% fees & bonus signals on predictions</div>
+                                    </div>
+                                </div>
+                                <button onclick="copyAffiliateLink()" class="px-3 py-1.5 bg-[#b6ff4a] text-black text-xs font-bold rounded-xl hover:bg-white transition flex items-center gap-1">
+                                    <i class="fa-regular fa-copy"></i> Copy Link
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="mt-8 space-y-4">
-<div><label class="text-[10px] tracking-widest text-zinc-500 font-bold">EMAIL OR USERNAME</label><input id="email" class="w-full bg-[#151515] border border-[#222] p-4 rounded-xl mt-2 text-sm outline-none focus:border-[#b6ff4a] transition" placeholder="rony@gmail.com" value="Rony_201000"></div>
-<div><label class="text-[10px] tracking-widest text-zinc-500 font-bold">PASSWORD</label><input id="pass" type="password" class="w-full bg-[#151515] border border-[#222] p-4 rounded-xl mt-2 text-sm outline-none focus:border-[#b6ff4a]" placeholder="••••••••" value="rony123"></div>
+                    <!-- Social Icons Header -->
+                    <div class="relative z-10 mt-10 flex flex-wrap gap-2 text-xs">
+                        <a href="https://x.com/Rony_201000" target="_blank" class="flex items-center gap-2 bg-black/60 border border-white/10 px-4 py-2.5 rounded-xl hover:border-[#b6ff4a] transition">
+                            <i class="fa-brands fa-x-twitter text-[#b6ff4a]"></i> <span class="font-bold">@Rony_201000</span>
+                        </a>
+                        <a href="https://t.me/Rony_201000" target="_blank" class="flex items-center gap-2 bg-black/60 border border-white/10 px-4 py-2.5 rounded-xl hover:border-[#229ED9] transition">
+                            <i class="fa-brands fa-telegram text-[#229ED9]"></i> <span class="font-bold">@Rony_201000</span>
+                        </a>
+                        <div class="flex items-center gap-2 bg-black/60 border border-white/10 px-4 py-2.5 rounded-xl text-zinc-400">
+                            <i class="fa-brands fa-discord text-[#5865F2]"></i> <span class="font-mono text-xs">rony_201000</span>
+                        </div>
+                    </div>
+                </div>
 
-<button onclick="login()" class="w-full bg-[#b6ff4a] text-black py-4 rounded-xl font-black text-sm tracking-wide hover:shadow-[0_0_30px_rgba(182,255,74,0.5)] transition">LOGIN TO TERMINAL →</button>
+                <!-- RIGHT LOGIN FORM (5 Cols) -->
+                <div class="lg:col-span-5 p-8 lg:p-12 bg-[#09090c]/90 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h2 class="text-2xl font-black tracking-tight">Access Terminal</h2>
+                                <p class="text-zinc-500 text-xs mt-1">Enter RONY TRADE Pro Analytics suite</p>
+                            </div>
+                            <div class="w-10 h-10 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-zinc-400">
+                                <i class="fa-solid fa-shield-halved text-xs"></i>
+                            </div>
+                        </div>
 
-<div class="grid grid-cols-2 gap-2">
-<button onclick="login()" class="bg-white text-black py-3 rounded-xl font-bold text-xs"><i class="fa-brands fa-google mr-1"></i> Google</button>
-<button onclick="login()" class="bg-[#1a1a1a] border border-[#222] py-3 rounded-xl font-bold text-xs"><i class="fa-solid fa-wallet mr-1"></i> Connect Wallet</button>
-</div>
+                        <!-- Form Input Groups -->
+                        <div class="mt-8 space-y-4">
+                            <div>
+                                <label class="text-[10px] tracking-widest text-zinc-400 font-bold uppercase block mb-1.5">Username / Email</label>
+                                <div class="relative">
+                                    <i class="fa-regular fa-user absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
+                                    <input id="email" type="text" class="w-full bg-black/50 border border-white/10 pl-10 pr-4 py-3.5 rounded-xl text-sm outline-none focus:border-[#b6ff4a] transition font-mono" placeholder="rony@gmail.com" value="Rony_201000">
+                                </div>
+                            </div>
 
-<div class="bg-[#b6ff4a]/10 border border-[#b6ff4a]/20 p-3 rounded-xl mt-4">
-<div class="text-[11px] font-bold text-[#b6ff4a]"><i class="fa-solid fa-gift mr-1"></i> NEW USER BONUS</div>
-<div class="text-[11px] text-zinc-400 mt-1">Sign up with my Polymarket link: <a href="https://polymarket.com/?via=rony-j6jh" class="text-white underline font-bold">polymarket.com/?via=rony-j6jh</a> to get VIP signals in Telegram.</div>
-</div>
+                            <div>
+                                <label class="text-[10px] tracking-widest text-zinc-400 font-bold uppercase block mb-1.5">Access Pass Key</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-key absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
+                                    <input id="pass" type="password" class="w-full bg-black/50 border border-white/10 pl-10 pr-4 py-3.5 rounded-xl text-sm outline-none focus:border-[#b6ff4a] transition font-mono" placeholder="••••••••" value="rony123">
+                                </div>
+                            </div>
 
-<div class="text-center text-[10px] text-zinc-600 mt-6 leading-relaxed">
-Demo: Any Email/Pass → Login<br>
-Contact: <a href="https://t.me/Rony_201000" class="text-zinc-300">Telegram @Rony_201000</a> | <a href="https://x.com/Rony_201000" class="text-zinc-300">X @Rony_201000</a><br>
-Discord: rony_201000 • Affiliate Active ✅
-</div>
-</div>
-</div>
-</div>
-</div>
+                            <button onclick="login()" class="w-full bg-[#b6ff4a] text-black py-4 rounded-xl font-black text-sm tracking-wide hover:bg-white hover:shadow-[0_0_25px_rgba(182,255,74,0.4)] transition duration-200 mt-2 flex items-center justify-center gap-2">
+                                <span>LAUNCH TERMINAL</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
 
-<!-- TRADING PAGE -->
-<div id="tradePage" class="hidden fixed inset-0 bg-[#050507] z-50 overflow-auto">
-<div class="flex justify-between items-center px-6 py-3 bg-[#0f0f0f] border-b border-[#1f1f1f] sticky top-0 z-10">
-<div class="flex items-center gap-4"><span class="font-black">RONY<span class="text-[#b6ff4a]">.TRADE</span></span><span class="text-[10px] bg-[#b6ff4a] text-black px-2 py-1 rounded-full font-black">PRO TERMINAL</span><span class="hidden md:block text-[11px] text-zinc-500">Affiliate: polymarket.com/?via=rony-j6jh</span></div>
-<div class="flex items-center gap-3"><div class="text-right hidden md:block"><div class="text-xs font-bold" id="uName">Rony_201000</div><div class="text-[10px] text-zinc-500">Verified KOL</div></div><img src="https://i.pravatar.cc/100?u=rony" class="w-8 h-8 rounded-full"><button onclick="logout()" class="bg-[#1a1a1a] px-3 py-1.5 rounded-full text-xs">Logout</button></div>
-</div>
+                            <div class="relative my-4 text-center">
+                                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/10"></div></div>
+                                <span class="relative bg-[#09090c] px-3 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Or Web3 Auth</span>
+                            </div>
 
-<div class="grid grid-cols-12 gap-3 p-3">
-<div class="col-span-12 lg:col-span-9"><div class="bg-[#0f0f0f] rounded-2xl border border-[#1f1f1f] overflow-hidden"><div class="flex gap-4 p-3 text-xs border-b border-[#1f1f1f]"><span class="font-bold">BTC/USDT</span><span id="pLive" class="text-[#b6ff4a] mono font-bold">$64,382.12</span><span class="text-zinc-500">+2.34% • Vol 28B</span></div><div id="tv" style="height:78vh"></div></div></div>
-<div class="col-span-12 lg:col-span-3 space-y-3">
-<div class="bg-[#0f0f0f] rounded-2xl border border-[#1f1f1f] p-4"><div class="font-bold text-sm">Trade</div><div class="grid grid-cols-2 gap-2 mt-3"><button class="bg-[#b6ff4a] text-black py-3 rounded-xl font-black text-sm">LONG</button><button class="bg-[#ff3b3b] text-white py-3 rounded-xl font-black text-sm">SHORT</button></div><input id="priceIn" class="w-full bg-[#151515] border border-[#222] p-3 rounded-xl mt-3 mono text-sm" value="64382.12"><a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="block w-full bg-white text-black py-3 rounded-xl font-black text-center text-sm mt-3">Trade on Polymarket →</a></div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button onclick="login()" class="bg-white/5 border border-white/10 hover:bg-white/10 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-google text-red-400"></i> Google
+                                </button>
+                                <button onclick="connectWallet()" class="bg-white/5 border border-white/10 hover:bg-[#b6ff4a]/20 hover:border-[#b6ff4a] py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 text-white">
+                                    <i class="fa-solid fa-wallet text-[#b6ff4a]"></i> Web3 Wallet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="bg-[#0f0f0f] rounded-2xl border border-[#1f1f1f] p-4">
-<div class="font-bold text-sm">Connect With Me</div>
-<div class="mt-3 space-y-2">
-<a href="https://x.com/Rony_201000" target="_blank" class="flex justify-between items-center bg-[#151515] p-3 rounded-xl text-xs hover:bg-black transition"><span><i class="fa-brands fa-x-twitter mr-2"></i> Twitter / X</span><span class="font-bold">@Rony_201000</span></a>
-<a href="https://t.me/Rony_201000" target="_blank" class="flex justify-between items-center bg-[#151515] p-3 rounded-xl text-xs hover:bg-[#229ED9]/20 transition"><span><i class="fa-brands fa-telegram mr-2 text-[#229ED9]"></i> Telegram</span><span class="font-bold">@Rony_201000</span></a>
-<div class="flex justify-between items-center bg-[#151515] p-3 rounded-xl text-xs"><span><i class="fa-brands fa-discord mr-2 text-[#5865F2]"></i> Discord</span><span class="font-bold">rony_201000</span></div>
-<a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="flex justify-between items-center bg-[#b6ff4a]/10 border border-[#b6ff4a]/20 p-3 rounded-xl text-xs"><span><i class="fa-solid fa-link mr-2 text-[#b6ff4a]"></i> Affiliate</span><span class="font-bold text-[#b6ff4a]">via=rony-j6jh</span></a>
-</div>
-</div>
-</div>
-</div>
-</div>
+                    <div class="mt-8 pt-6 border-t border-white/5 text-center text-[11px] text-zinc-500 leading-relaxed">
+                        <span class="text-emerald-400 font-bold"><i class="fa-solid fa-[#b6ff4a] fa-circle-check"></i> SSL Secure Terminal</span><br>
+                        Need help? Contact <a href="https://t.me/Rony_201000" target="_blank" class="text-zinc-300 underline">Telegram Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script>
-function login(){
-let v=document.getElementById('email').value||'Rony_201000';
-document.getElementById('uName').innerText=v;
-document.getElementById('loginPage').classList.add('hidden');
-document.getElementById('tradePage').classList.remove('hidden');
-new TradingView.widget({autosize:true,symbol:"BINANCE:BTCUSDT",interval:"15",theme:"dark",style:"1",container_id:"tv",backgroundColor:"#0f0f0f",gridColor:"#1f1f1f"});
-setInterval(()=>{let p=(64382+(Math.random()-0.5)*120).toFixed(2);let a=document.getElementById('pLive');let b=document.getElementById('priceIn');if(a)a.innerText='$'+p;if(b)b.value=p},1000);
-}
-function logout(){document.getElementById('tradePage').classList.add('hidden');document.getElementById('loginPage').classList.remove('hidden');}
-</script>
+        <!-- TRADING TERMINAL VIEW (Hidden by default) -->
+        <div id="tradePage" class="hidden flex-1 flex flex-col bg-[#050507]">
+            <!-- Top Navigation Bar -->
+            <header class="bg-[#0c0c0f] border-b border-white/10 px-4 py-2.5 flex items-center justify-between sticky top-0 z-40">
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 bg-[#b6ff4a] rounded-xl flex items-center justify-center text-black font-black text-sm">R</div>
+                        <span class="font-black tracking-tight text-sm">RONY<span class="text-[#b6ff4a]">.TRADE</span></span>
+                    </div>
+
+                    <!-- Pair Selector Tabs -->
+                    <div class="hidden md:flex items-center gap-1 bg-black/50 p-1 rounded-xl border border-white/5 text-xs">
+                        <button onclick="switchPair('BINANCE:BTCUSDT', 'BTC/USDT', 64382.12)" id="tab-BTC" class="px-3 py-1.5 rounded-lg font-bold bg-[#b6ff4a] text-black transition">BTC/USDT</button>
+                        <button onclick="switchPair('BINANCE:ETHUSDT', 'ETH/USDT', 3482.50)" id="tab-ETH" class="px-3 py-1.5 rounded-lg font-bold text-zinc-400 hover:text-white transition">ETH/USDT</button>
+                        <button onclick="switchPair('BINANCE:SOLUSDT', 'SOL/USDT', 148.90)" id="tab-SOL" class="px-3 py-1.5 rounded-lg font-bold text-zinc-400 hover:text-white transition">SOL/USDT</button>
+                    </div>
+                </div>
+
+                <!-- Ticker Info Ribbon -->
+                <div class="hidden lg:flex items-center gap-6 text-xs font-mono">
+                    <div>
+                        <span class="text-zinc-500 block text-[9px]">ACTIVE PAIR</span>
+                        <span id="currentPairText" class="font-bold text-white">BTC/USDT</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block text-[9px]">MARKET PRICE</span>
+                        <span id="pLive" class="font-bold text-[#b6ff4a]">$64,382.12</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block text-[9px]">24H CHANGE</span>
+                        <span class="text-emerald-400 font-bold">+2.34%</span>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block text-[9px]">24H VOLUME</span>
+                        <span class="text-zinc-300">$28.4B</span>
+                    </div>
+                </div>
+
+                <!-- User Profile & Actions -->
+                <div class="flex items-center gap-3">
+                    <a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="hidden sm:flex items-center gap-1.5 bg-[#b6ff4a]/10 border border-[#b6ff4a]/30 px-3 py-1.5 rounded-xl text-xs text-[#b6ff4a] font-bold hover:bg-[#b6ff4a] hover:text-black transition">
+                        <i class="fa-solid fa-gem"></i> VIP Polymarket
+                    </a>
+                    
+                    <div class="flex items-center gap-2 pl-2 border-l border-white/10">
+                        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=rony" class="w-7 h-7 rounded-full bg-zinc-800 border border-white/10">
+                        <div class="text-left hidden sm:block">
+                            <div class="text-xs font-bold leading-none" id="uName">Rony_201000</div>
+                            <span class="text-[9px] text-[#b6ff4a] font-mono">PRO MEMBER</span>
+                        </div>
+                        <button onclick="logout()" title="Logout" class="ml-2 w-7 h-7 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-400 flex items-center justify-center text-zinc-400 text-xs transition">
+                            <i class="fa-solid fa-power-off"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Terminal Grid Layout -->
+            <div class="flex-1 grid grid-cols-12 gap-2 p-2">
+                
+                <!-- Left Section: TradingView Chart & Bottom Orders Table (8 Cols) -->
+                <div class="col-span-12 lg:col-span-8 flex flex-col gap-2">
+                    <!-- TradingView Widget Wrapper -->
+                    <div class="bg-[#0c0c0f] rounded-2xl border border-white/10 overflow-hidden flex-1 min-h-[450px] relative">
+                        <div id="tv" class="w-full h-full min-h-[450px]"></div>
+                    </div>
+
+                    <!-- Bottom Positions & History Panel -->
+                    <div class="bg-[#0c0c0f] rounded-2xl border border-white/10 p-4 h-[220px] flex flex-col">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
+                            <div class="flex gap-4 text-xs font-bold">
+                                <button class="text-[#b6ff4a] border-b-2 border-[#b6ff4a] pb-2 -mb-2.5">Open Positions (<span id="posCount">1</span>)</button>
+                                <button class="text-zinc-500 hover:text-zinc-300">Order History</button>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-500">REAL-TIME EXECUTION</span>
+                        </div>
+
+                        <!-- Positions Table -->
+                        <div class="flex-1 overflow-auto">
+                            <table class="w-full text-left text-xs font-mono">
+                                <thead>
+                                    <tr class="text-zinc-500 text-[10px] uppercase border-b border-white/5">
+                                        <th class="pb-2">Symbol</th>
+                                        <th class="pb-2">Type</th>
+                                        <th class="pb-2">Entry Price</th>
+                                        <th class="pb-2">Mark Price</th>
+                                        <th class="pb-2">PnL (EST)</th>
+                                        <th class="pb-2 text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="positionsTableBody">
+                                    <tr class="border-b border-white/5">
+                                        <td class="py-2.5 font-bold">BTC/USDT</td>
+                                        <td class="py-2.5 text-emerald-400 font-bold">LONG 20x</td>
+                                        <td class="py-2.5 text-zinc-300">$64,120.00</td>
+                                        <td class="py-2.5 text-zinc-300" id="markPriceTd">$64,382.12</td>
+                                        <td class="py-2.5 text-emerald-400 font-bold" id="pnlTd">+$163.26 (+8.15%)</td>
+                                        <td class="py-2.5 text-right">
+                                            <button onclick="closePosition(this)" class="bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white border border-red-500/20 px-2 py-1 rounded text-[10px] transition">Close</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section: Order Book & Execution Form (4 Cols) -->
+                <div class="col-span-12 lg:col-span-4 flex flex-col gap-2">
+                    
+                    <!-- Execution Order Panel -->
+                    <div class="bg-[#0c0c0f] rounded-2xl border border-white/10 p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-bold text-sm">Place Trade</span>
+                            <span class="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded font-mono text-zinc-400">Balance: $10,240.50</span>
+                        </div>
+
+                        <!-- Long / Short Switcher -->
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <button id="btnLong" onclick="setSide('LONG')" class="bg-emerald-500 text-black py-2.5 rounded-xl font-black text-xs transition glow-accent-sm">LONG / BUY</button>
+                            <button id="btnShort" onclick="setSide('SHORT')" class="bg-white/5 border border-white/10 text-zinc-400 py-2.5 rounded-xl font-black text-xs hover:bg-red-500/20 hover:text-red-400 transition">SHORT / SELL</button>
+                        </div>
+
+                        <!-- Leverage Selector Slider -->
+                        <div class="mb-4">
+                            <div class="flex justify-between text-xs mb-1 font-mono">
+                                <span class="text-zinc-400">Leverage</span>
+                                <span class="text-[#b6ff4a] font-bold" id="levValue">20x</span>
+                            </div>
+                            <input type="range" min="1" max="100" value="20" class="w-full" oninput="document.getElementById('levValue').innerText = this.value + 'x'">
+                        </div>
+
+                        <!-- Price Input -->
+                        <div class="mb-3">
+                            <label class="text-[10px] text-zinc-500 font-bold uppercase block mb-1">Order Price (USDT)</label>
+                            <input id="priceIn" class="w-full bg-black/60 border border-white/10 p-3 rounded-xl font-mono text-xs outline-none focus:border-[#b6ff4a]" value="64382.12">
+                        </div>
+
+                        <!-- Amount Input -->
+                        <div class="mb-4">
+                            <label class="text-[10px] text-zinc-500 font-bold uppercase block mb-1">Amount (USDT)</label>
+                            <input id="amountIn" class="w-full bg-black/60 border border-white/10 p-3 rounded-xl font-mono text-xs outline-none focus:border-[#b6ff4a]" placeholder="100.00" value="500">
+                        </div>
+
+                        <button onclick="executeTrade()" id="tradeSubmitBtn" class="w-full bg-[#b6ff4a] text-black py-3.5 rounded-xl font-black text-xs tracking-wider uppercase hover:bg-white transition">
+                            EXECUTE LONG POSITION
+                        </button>
+
+                        <a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="mt-3 block w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white text-center py-3 rounded-xl font-bold text-xs transition">
+                            Trade Predictions On Polymarket →
+                        </a>
+                    </div>
+
+                    <!-- Live Dynamic Order Book -->
+                    <div class="bg-[#0c0c0f] rounded-2xl border border-white/10 p-4 flex-1 flex flex-col justify-between min-h-[220px]">
+                        <div class="flex justify-between items-center text-xs border-b border-white/10 pb-2 mb-2 font-bold">
+                            <span>Order Book</span>
+                            <span class="text-[10px] text-zinc-500 font-mono">Spread: 0.01</span>
+                        </div>
+
+                        <!-- Asks (Red) -->
+                        <div class="space-y-1 font-mono text-[11px]" id="orderBookAsks">
+                            <div class="flex justify-between text-red-400"><span>64385.50</span><span class="text-zinc-500">0.421 BTC</span></div>
+                            <div class="flex justify-between text-red-400"><span>64384.00</span><span class="text-zinc-500">1.150 BTC</span></div>
+                            <div class="flex justify-between text-red-400"><span>64383.10</span><span class="text-zinc-500">0.085 BTC</span></div>
+                        </div>
+
+                        <div class="py-1.5 my-1 text-center font-mono font-bold text-sm text-[#b6ff4a] bg-white/5 rounded-lg" id="obCurrentPrice">
+                            64382.12
+                        </div>
+
+                        <!-- Bids (Green) -->
+                        <div class="space-y-1 font-mono text-[11px]" id="orderBookBids">
+                            <div class="flex justify-between text-emerald-400"><span>64381.50</span><span class="text-zinc-500">0.912 BTC</span></div>
+                            <div class="flex justify-between text-emerald-400"><span>64380.00</span><span class="text-zinc-500">2.410 BTC</span></div>
+                            <div class="flex justify-between text-emerald-400"><span>64379.20</span><span class="text-zinc-500">0.150 BTC</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TradingView Script Header -->
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        let currentPairSymbol = "BINANCE:BTCUSDT";
+        let currentPrice = 64382.12;
+        let selectedSide = 'LONG';
+        let tvWidget = null;
+
+        // Toast Helper
+        function showToast(msg, icon='fa-circle-check', isError=false) {
+            const c = document.getElementById('toastContainer');
+            const t = document.createElement('div');
+            t.className = `glass-panel px-4 py-3 rounded-xl border ${isError ? 'border-red-500/40 text-red-400' : 'border-[#b6ff4a]/40 text-[#b6ff4a]'} text-xs font-bold flex items-center gap-2 shadow-2xl transition duration-300 pointer-events-auto`;
+            t.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${msg}</span>`;
+            c.appendChild(t);
+            setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 3000);
+        }
+
+        // Copy Link
+        function copyAffiliateLink() {
+            navigator.clipboard.writeText('https://polymarket.com/?via=rony-j6jh');
+            showToast('Polymarket Affiliate Link Copied!');
+        }
+
+        // Web3 Wallet Connect Mock
+        function connectWallet() {
+            showToast('MetaMask / Web3 Wallet Connected!');
+            login();
+        }
+
+        // Login Action
+        function login() {
+            let v = document.getElementById('email').value || 'Rony_201000';
+            document.getElementById('uName').innerText = v;
+            document.getElementById('loginPage').classList.add('hidden');
+            document.getElementById('tradePage').classList.remove('hidden');
+            document.getElementById('tradePage').classList.add('flex');
+
+            initTV(currentPairSymbol);
+            startPriceTicker();
+            showToast('Welcome to RONY TRADE Pro Terminal');
+        }
+
+        // Logout Action
+        function logout() {
+            document.getElementById('tradePage').classList.add('hidden');
+            document.getElementById('tradePage').classList.remove('flex');
+            document.getElementById('loginPage').classList.remove('hidden');
+            showToast('Logged out successfully', 'fa-right-from-bracket');
+        }
+
+        // Initialize TradingView Chart
+        function initTV(symbol) {
+            document.getElementById('tv').innerHTML = '';
+            tvWidget = new TradingView.widget({
+                autosize: true,
+                symbol: symbol,
+                interval: "15",
+                timezone: "Etc/UTC",
+                theme: "dark",
+                style: "1",
+                locale: "en",
+                enable_publishing: false,
+                backgroundColor: "#0c0c0f",
+                gridColor: "rgba(255, 255, 255, 0.03)",
+                container_id: "tv"
+            });
+        }
+
+        // Pair Switcher
+        function switchPair(symbol, label, basePrice) {
+            currentPairSymbol = symbol;
+            currentPrice = basePrice;
+            document.getElementById('currentPairText').innerText = label;
+            
+            ['BTC', 'ETH', 'SOL'].forEach(p => {
+                const btn = document.getElementById(`tab-${p}`);
+                if (label.startsWith(p)) {
+                    btn.className = "px-3 py-1.5 rounded-lg font-bold bg-[#b6ff4a] text-black transition";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg font-bold text-zinc-400 hover:text-white transition";
+                }
+            });
+
+            initTV(symbol);
+            showToast(`Switched pair to ${label}`);
+        }
+
+        // Set Long / Short Side
+        function setSide(side) {
+            selectedSide = side;
+            const bLong = document.getElementById('btnLong');
+            const bShort = document.getElementById('btnShort');
+            const submitBtn = document.getElementById('tradeSubmitBtn');
+
+            if (side === 'LONG') {
+                bLong.className = "bg-emerald-500 text-black py-2.5 rounded-xl font-black text-xs transition glow-accent-sm";
+                bShort.className = "bg-white/5 border border-white/10 text-zinc-400 py-2.5 rounded-xl font-black text-xs hover:bg-red-500/20 hover:text-red-400 transition";
+                submitBtn.className = "w-full bg-[#b6ff4a] text-black py-3.5 rounded-xl font-black text-xs tracking-wider uppercase hover:bg-white transition";
+                submitBtn.innerText = "EXECUTE LONG POSITION";
+            } else {
+                bShort.className = "bg-red-500 text-white py-2.5 rounded-xl font-black text-xs transition glow-accent-sm";
+                bLong.className = "bg-white/5 border border-white/10 text-zinc-400 py-2.5 rounded-xl font-black text-xs hover:bg-emerald-500/20 hover:text-emerald-400 transition";
+                submitBtn.className = "w-full bg-red-500 text-white py-3.5 rounded-xl font-black text-xs tracking-wider uppercase hover:bg-red-600 transition";
+                submitBtn.innerText = "EXECUTE SHORT POSITION";
+            }
+        }
+
+        // Simulate Order Execution
+        function executeTrade() {
+            const amt = document.getElementById('amountIn').value || '100';
+            showToast(`${selectedSide} Order executed for $${amt}!`, 'fa-bolt');
+        }
+
+        // Close Position
+        function closePosition(btn) {
+            btn.closest('tr').remove();
+            document.getElementById('posCount').innerText = '0';
+            showToast('Position closed successfully');
+        }
+
+        // Live Simulated Price Loop
+        function startPriceTicker() {
+            setInterval(() => {
+                let delta = (Math.random() - 0.49) * (currentPrice * 0.001);
+                currentPrice = parseFloat((currentPrice + delta).toFixed(2));
+
+                // Update UI elements
+                const pLive = document.getElementById('pLive');
+                const priceIn = document.getElementById('priceIn');
+                const obCurrentPrice = document.getElementById('obCurrentPrice');
+                const markPriceTd = document.getElementById('markPriceTd');
+
+                if (pLive) pLive.innerText = '$' + currentPrice.toLocaleString();
+                if (priceIn) priceIn.value = currentPrice;
+                if (obCurrentPrice) obCurrentPrice.innerText = currentPrice;
+                if (markPriceTd) markPriceTd.innerText = '$' + currentPrice;
+
+                // Dynamic Order Book Update
+                updateOrderBook();
+            }, 1200);
+        }
+
+        function updateOrderBook() {
+            const asks = document.getElementById('orderBookAsks');
+            const bids = document.getElementById('orderBookBids');
+
+            if (!asks || !bids) return;
+
+            asks.innerHTML = `
+                <div class="flex justify-between text-red-400"><span>${(currentPrice + 1.2).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*1.5).toFixed(3)} BTC</span></div>
+                <div class="flex justify-between text-red-400"><span>${(currentPrice + 0.7).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*1.1).toFixed(3)} BTC</span></div>
+                <div class="flex justify-between text-red-400"><span>${(currentPrice + 0.3).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*0.8).toFixed(3)} BTC</span></div>
+            `;
+
+            bids.innerHTML = `
+                <div class="flex justify-between text-emerald-400"><span>${(currentPrice - 0.3).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*0.9).toFixed(3)} BTC</span></div>
+                <div class="flex justify-between text-emerald-400"><span>${(currentPrice - 0.8).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*1.7).toFixed(3)} BTC</span></div>
+                <div class="flex justify-between text-emerald-400"><span>${(currentPrice - 1.4).toFixed(2)}</span><span class="text-zinc-500">${(Math.random()*2.1).toFixed(3)} BTC</span></div>
+            `;
+        }
+    </script>
 </body>
-</
+</html>
