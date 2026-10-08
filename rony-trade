@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RONY TRADE | Official KOL Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>body{background:#050507;font-family:Inter,sans-serif}.mono{font-family:JetBrains Mono,monospace}</style>
+</head>
+<body class="text-white">
+
+<!-- TOP ANNOUNCEMENT -->
+<div class="bg-[#b6ff4a] text-black text-center py-2 text-xs font-black tracking-wider">
+🚀 OFFICIAL PARTNER: <a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="underline">POLYMARKET.COM/?via=rony-j6jh</a> - USE MY LINK FOR VIP ACCESS + BONUS 🚀
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="min-h-screen flex items-center justify-center p-4 bg-[radial-gradient(circle_at_50%_0%,rgba(182,255,74,0.15),transparent_60%)]">
+<div class="w-full max-w-[1100px] grid grid-cols-1 lg:grid-cols-2 bg-[#0f0f0f] rounded-[32px] border border-[#1f1f1f] overflow-hidden shadow-2xl">
+
+<!-- LEFT -->
+<div class="p-10 lg:p-12 flex flex-col justify-between relative">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#b6ff4a]/10 via-transparent to-transparent pointer-events-none"></div>
+<div class="relative">
+<div class="flex items-center gap-3"><div class="w-9 h-9 bg-[#b6ff4a] rounded-full flex items-center justify-center text-black font-black">R</div><span class="font-black text-xl">RONY.TRADE</span><span class="text-[9px] bg-white text-black px-2 py-1 rounded-full font-bold">VERIFIED KOL</span></div>
+<h1 class="text-[48px] font-black leading-[0.85] mt-12 tracking-tight">Trade Like<br><span class="text-[#b6ff4a]">A Pro.</span><br>Earn Like<br>A KOL.</h1>
+<p class="text-zinc-400 text-sm mt-5 leading-relaxed">Crypto Influencer • 6.4k Followers • 5.6k+ Posts<br>DeFi, Polymarket & Prediction Market Specialist.</p>
+
+<div class="grid grid-cols-3 gap-3 mt-8">
+<div class="bg-[#151515] border border-[#222] p-3 rounded-2xl"><div class="text-[10px] text-zinc-500">FOLLOWERS</div><div class="font-black text-[#b6ff4a]">6.4K+</div></div>
+<div class="bg-[#151515] border border-[#222] p-3 rounded-2xl"><div class="text-[10px] text-zinc-500">WIN RATE</div><div class="font-black">71%</div></div>
+<div class="bg-[#151515] border border-[#222] p-3 rounded-2xl"><div class="text-[10px] text-zinc-500">CLIENTS</div><div class="font-black">12+</div></div>
+</div>
+
+<div class="mt-8 space-y-2">
+<a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="flex items-center justify-between bg-[#1a1a1a] border border-[#2a2a2a] p-3 rounded-xl hover:border-[#b6ff4a] transition"><span class="text-xs"><i class="fa-solid fa-chart-line text-[#b6ff4a] mr-2"></i> My Polymarket Affiliate Link</span><span class="text-[10px] bg-[#b6ff4a] text-black px-2 py-1 rounded-full font-bold">LIVE</span></a>
+</div>
+</div>
+
+<div class="relative mt-10 flex gap-3 text-[11px]">
+<a href="https://x.com/Rony_201000" target="_blank" class="flex items-center gap-2 bg-black border border-[#222] px-4 py-2 rounded-full hover:bg-white hover:text-black transition"><i class="fa-brands fa-x-twitter"></i> @Rony_201000</a>
+<a href="https://t.me/Rony_201000" target="_blank" class="flex items-center gap-2 bg-black border border-[#222] px-4 py-2 rounded-full hover:bg-[#229ED9] hover:text-white transition"><i class="fa-brands fa-telegram"></i> @Rony_201000</a>
+<a href="#" class="flex items-center gap-2 bg-black border border-[#222] px-4 py-2 rounded-full"><i class="fa-brands fa-discord"></i> rony_201000</a>
+</div>
+</div>
+
+<!-- RIGHT LOGIN -->
+<div class="p-10 lg:p-12 bg-[#0a0a0a] border-l border-[#1f1f1f]">
+<div class="flex justify-between items-start">
+<div><h2 class="text-[28px] font-black">Login</h2><p class="text-zinc-500 text-xs mt-1">Access RONY TRADE Pro Terminal</p></div>
+<div class="w-10 h-10 bg-[#1a1a1a] rounded-full flex items-center justify-center"><i class="fa-solid fa-lock text-zinc-500 text-xs"></i></div>
+</div>
+
+<div class="mt-8 space-y-4">
+<div><label class="text-[10px] tracking-widest text-zinc-500 font-bold">EMAIL OR USERNAME</label><input id="email" class="w-full bg-[#151515] border border-[#222] p-4 rounded-xl mt-2 text-sm outline-none focus:border-[#b6ff4a] transition" placeholder="rony@gmail.com" value="Rony_201000"></div>
+<div><label class="text-[10px] tracking-widest text-zinc-500 font-bold">PASSWORD</label><input id="pass" type="password" class="w-full bg-[#151515] border border-[#222] p-4 rounded-xl mt-2 text-sm outline-none focus:border-[#b6ff4a]" placeholder="••••••••" value="rony123"></div>
+
+<button onclick="login()" class="w-full bg-[#b6ff4a] text-black py-4 rounded-xl font-black text-sm tracking-wide hover:shadow-[0_0_30px_rgba(182,255,74,0.5)] transition">LOGIN TO TERMINAL →</button>
+
+<div class="grid grid-cols-2 gap-2">
+<button onclick="login()" class="bg-white text-black py-3 rounded-xl font-bold text-xs"><i class="fa-brands fa-google mr-1"></i> Google</button>
+<button onclick="login()" class="bg-[#1a1a1a] border border-[#222] py-3 rounded-xl font-bold text-xs"><i class="fa-solid fa-wallet mr-1"></i> Connect Wallet</button>
+</div>
+
+<div class="bg-[#b6ff4a]/10 border border-[#b6ff4a]/20 p-3 rounded-xl mt-4">
+<div class="text-[11px] font-bold text-[#b6ff4a]"><i class="fa-solid fa-gift mr-1"></i> NEW USER BONUS</div>
+<div class="text-[11px] text-zinc-400 mt-1">Sign up with my Polymarket link: <a href="https://polymarket.com/?via=rony-j6jh" class="text-white underline font-bold">polymarket.com/?via=rony-j6jh</a> to get VIP signals in Telegram.</div>
+</div>
+
+<div class="text-center text-[10px] text-zinc-600 mt-6 leading-relaxed">
+Demo: Any Email/Pass → Login<br>
+Contact: <a href="https://t.me/Rony_201000" class="text-zinc-300">Telegram @Rony_201000</a> | <a href="https://x.com/Rony_201000" class="text-zinc-300">X @Rony_201000</a><br>
+Discord: rony_201000 • Affiliate Active ✅
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TRADING PAGE -->
+<div id="tradePage" class="hidden fixed inset-0 bg-[#050507] z-50 overflow-auto">
+<div class="flex justify-between items-center px-6 py-3 bg-[#0f0f0f] border-b border-[#1f1f1f] sticky top-0 z-10">
+<div class="flex items-center gap-4"><span class="font-black">RONY<span class="text-[#b6ff4a]">.TRADE</span></span><span class="text-[10px] bg-[#b6ff4a] text-black px-2 py-1 rounded-full font-black">PRO TERMINAL</span><span class="hidden md:block text-[11px] text-zinc-500">Affiliate: polymarket.com/?via=rony-j6jh</span></div>
+<div class="flex items-center gap-3"><div class="text-right hidden md:block"><div class="text-xs font-bold" id="uName">Rony_201000</div><div class="text-[10px] text-zinc-500">Verified KOL</div></div><img src="https://i.pravatar.cc/100?u=rony" class="w-8 h-8 rounded-full"><button onclick="logout()" class="bg-[#1a1a1a] px-3 py-1.5 rounded-full text-xs">Logout</button></div>
+</div>
+
+<div class="grid grid-cols-12 gap-3 p-3">
+<div class="col-span-12 lg:col-span-9"><div class="bg-[#0f0f0f] rounded-2xl border border-[#1f1f1f] overflow-hidden"><div class="flex gap-4 p-3 text-xs border-b border-[#1f1f1f]"><span class="font-bold">BTC/USDT</span><span id="pLive" class="text-[#b6ff4a] mono font-bold">$64,382.12</span><span class="text-zinc-500">+2.34% • Vol 28B</span></div><div id="tv" style="height:78vh"></div></div></div>
+<div class="col-span-12 lg:col-span-3 space-y-3">
+<div class="bg-[#0f0f0f] rounded-2xl border border-[#1f1f1f] p-4"><div class="font-bold text-sm">Trade</div><div class="grid grid-cols-2 gap-2 mt-3"><button class="bg-[#b6ff4a] text-black py-3 rounded-xl font-black text-sm">LONG</button><button class="bg-[#ff3b3b] text-white py-3 rounded-xl font-black text-sm">SHORT</button></div><input id="priceIn" class="w-full bg-[#151515] border border-[#222] p-3 rounded-xl mt-3 mono text-sm" value="64382.12"><a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="block w-full bg-white text-black py-3 rounded-xl font-black text-center text-sm mt-3">Trade on Polymarket →</a></div>
+
+<div class="bg-[#0f0f0f] rounded-2xl border border-[#1f1f1f] p-4">
+<div class="font-bold text-sm">Connect With Me</div>
+<div class="mt-3 space-y-2">
+<a href="https://x.com/Rony_201000" target="_blank" class="flex justify-between items-center bg-[#151515] p-3 rounded-xl text-xs hover:bg-black transition"><span><i class="fa-brands fa-x-twitter mr-2"></i> Twitter / X</span><span class="font-bold">@Rony_201000</span></a>
+<a href="https://t.me/Rony_201000" target="_blank" class="flex justify-between items-center bg-[#151515] p-3 rounded-xl text-xs hover:bg-[#229ED9]/20 transition"><span><i class="fa-brands fa-telegram mr-2 text-[#229ED9]"></i> Telegram</span><span class="font-bold">@Rony_201000</span></a>
+<div class="flex justify-between items-center bg-[#151515] p-3 rounded-xl text-xs"><span><i class="fa-brands fa-discord mr-2 text-[#5865F2]"></i> Discord</span><span class="font-bold">rony_201000</span></div>
+<a href="https://polymarket.com/?via=rony-j6jh" target="_blank" class="flex justify-between items-center bg-[#b6ff4a]/10 border border-[#b6ff4a]/20 p-3 rounded-xl text-xs"><span><i class="fa-solid fa-link mr-2 text-[#b6ff4a]"></i> Affiliate</span><span class="font-bold text-[#b6ff4a]">via=rony-j6jh</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+function login(){
+let v=document.getElementById('email').value||'Rony_201000';
+document.getElementById('uName').innerText=v;
+document.getElementById('loginPage').classList.add('hidden');
+document.getElementById('tradePage').classList.remove('hidden');
+new TradingView.widget({autosize:true,symbol:"BINANCE:BTCUSDT",interval:"15",theme:"dark",style:"1",container_id:"tv",backgroundColor:"#0f0f0f",gridColor:"#1f1f1f"});
+setInterval(()=>{let p=(64382+(Math.random()-0.5)*120).toFixed(2);let a=document.getElementById('pLive');let b=document.getElementById('priceIn');if(a)a.innerText='$'+p;if(b)b.value=p},1000);
+}
+function logout(){document.getElementById('tradePage').classList.add('hidden');document.getElementById('loginPage').classList.remove('hidden');}
+</script>
+</body>
+</
